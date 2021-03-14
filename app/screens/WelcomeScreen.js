@@ -20,7 +20,6 @@ export default function WelcomeSceen() {
             <Button bgColor={colors.secondary}>Register</Button>
             </View>
           </ImageBackground>
-        
   );
 }
 
