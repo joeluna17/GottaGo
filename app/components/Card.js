@@ -9,8 +9,7 @@ function Card(props) {
         <View style={CardStyles.cardWrapper}>
             <Image 
                 source={props.image}              
-                style={CardStyles.cardImage}
-            
+                style={CardStyles.cardImage}          
             />
             <View style={CardStyles.cardContentWrapper}>
                 <AppText>{props.title}</AppText>
@@ -28,13 +27,12 @@ const CardStyles = StyleSheet.create({
         width:'90%',
         height:300,
         backgroundColor: color.white,
-        borderRadius: 12
+        borderRadius: 15,
+        overflow:'hidden'
     },
     cardImage: {
         flex:1,   
-        width:'100%',
-        borderTopLeftRadius:12,
-        borderTopRightRadius:12
+        width:'100%'
     },
     cardContentWrapper: {
         flexDirection:'column',

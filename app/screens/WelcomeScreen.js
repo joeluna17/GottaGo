@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View,Image, ImageBackground } from 'react-native';
-import Button from '../components/Button';
+import AppButton from '../components/AppButton';
 import colors from '../config/colors';
 
 const bgImage = {uri: ''};
@@ -16,8 +16,8 @@ export default function WelcomeSceen() {
             </View>
 
             <View style={styles.buttonWrapper}>
-            <Button bgColor={colors.primary}>Login</Button>
-            <Button bgColor={colors.secondary}>Register</Button>
+            <AppButton bgColor={colors.primary} onPress={()=>{ console.log('Login Pressed')}}>Login</AppButton>
+            <AppButton bgColor={colors.secondary} onPress={()=>{ console.log('Registered Pressed') }}>Register</AppButton>
             </View>
           </ImageBackground>
   );

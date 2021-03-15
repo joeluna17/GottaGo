@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 
 import AppText from '../components/AppText';
+import ListItem from '../components/ListItem';
 import colors from '../config/colors';
 
 
@@ -18,16 +19,11 @@ function DetailListingScreen(props) {
                     <Text style={DetailStyles.subTitle}>{props.subTitle}</Text>
                 </View>
             </View>
-            <View style={DetailStyles.profileWrapper}>
-                <Image 
-                    source={require('../assets/mosh.jpg')} 
-                    style={DetailStyles.detailProfileImg}
-                    />
-                <View style={DetailStyles.profileText}>
-                    <Text style={DetailStyles.profileTitle}>Mosh Hamedani</Text>
-                    <Text style={DetailStyles.profileSubTitle}>5 Listings</Text>
-                </View>
-            </View>
+            <ListItem
+                title={'Mosh Hamedani'}
+                subTitle={'5 Listings'}
+                image={require('../assets/mosh.jpg')}
+            />
         </View>
     );
 }
@@ -57,25 +53,5 @@ const DetailStyles = StyleSheet.create({
         color:colors.secondary,
         fontWeight:'600',
         fontSize: 16
-    },
-    profileWrapper: {
-        marginTop:15,
-        padding:20,
-        flexDirection:'row',
-        alignItems:'center'
-    },
-    detailProfileImg:{
-        width:65,
-        height:65,
-        borderRadius:35,
-    },
-    profileText:{
-        marginLeft:8
-    },
-    profileTitle: {
-        fontWeight:'600'
-    },
-    profileSubTitle: {
-        color:colors.charcoal
     }
 });

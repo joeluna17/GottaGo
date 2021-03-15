@@ -1,16 +1,16 @@
 import React from 'react';;
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import colors from '../config/colors';
 
-function Button(props) {
+function AppButton(props) {
     const bgColor = {
-       backgroundColor: props.bgColor
+       backgroundColor: props.bgColor || colors.primary
     }
     return (
-       <View style={[ButtonStyles.button, bgColor]}>
-         <Text style={ButtonStyles.buttonText}>{props.children}</Text>
-       </View>
+        <TouchableOpacity style={[ButtonStyles.button, bgColor]}>
+            <Text style={ButtonStyles.buttonText} onPress={props.onPress}>{props.children}</Text>
+       </TouchableOpacity>
     );
 }
 
@@ -29,10 +29,11 @@ const ButtonStyles = StyleSheet.create({
         fontSize:20,
         color: colors.white,
         textTransform:'uppercase',
+        fontWeight:'bold'
     }
 });
 
 
 
 
-export default Button;
+export default AppButton;
