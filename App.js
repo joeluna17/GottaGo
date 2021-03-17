@@ -8,6 +8,7 @@ import AppText from  './app/components/AppText';
 import Card from './app/components/Card';
 import DetailListingScreen from './app/screens/DetailListingScreen';
 import MessagesScreen from './app/screens/MessagesScreen';
+import AccountScreen from './app/screens/AccountScreen';
 
 export default function App() {
   //console.log('We can log out for debugging, but make sure to remove them');
@@ -26,7 +27,8 @@ export default function App() {
           image={require('./app/assets/jacket.jpg')}
         /> */}
         {/* <ViewImageScreen /> */}
-        <MessagesScreen />
+        {/* <MessagesScreen /> */}
+        <AccountScreen />
     </View> 
     
   )

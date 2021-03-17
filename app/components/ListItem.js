@@ -1,10 +1,14 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableHighlight } from 'react-native';
+
+import Swipeable from 'react-native-gesture-handler/Swipeable'; 
 
 import colors from '../config/colors';
 
 function ListItem(props) {
     return (
+        <Swipeable renderRightActions={props.renderRightActions}>
+        <TouchableHighlight underlayColor={'grey'} onPress={props.onPress}>
         <View style={ListItemStyles.profileWrapper}>
         <Image 
             source={props.image} 
@@ -15,6 +19,8 @@ function ListItem(props) {
             <Text style={ListItemStyles.profileSubTitle}>{props.subTitle}</Text>
         </View>
     </View>
+    </TouchableHighlight>
+    </Swipeable>
     );
 }
 
@@ -22,10 +28,10 @@ export default ListItem;
 
 const ListItemStyles = StyleSheet.create({
     profileWrapper: {
-        marginTop:15,
         padding:20,
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
+        backgroundColor:colors.white
     },
     detailProfileImg:{
         width:65,
@@ -39,6 +45,6 @@ const ListItemStyles = StyleSheet.create({
         fontWeight:'600'
     },
     profileSubTitle: {
-        color:colors.charcoal
+        color:colors.black
     }
 });
